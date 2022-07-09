@@ -1,0 +1,19 @@
+[user]
+  name = Denat Hoxha
+  email = denat3@gmail.com
+
+[pull]
+  rebase = true
+[alias]
+  rh = reset --hard HEAD
+  co = checkout
+  cp = cherry-pick
+  amend = commit -a --amend --no-edit
+  unstage = reset --soft HEAD
+  cdiff = "!git diff $1 $1^"
+[push]
+  default = current
+[core]
+	excludesfile = /Users/denathoxha/.gitignore_global
+[init]
+	defaultBranch = main
