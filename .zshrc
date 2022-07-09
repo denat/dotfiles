@@ -69,7 +69,7 @@ alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/co
 function c { code ${@:-.} }
 alias ll="ls -1a";
 alias ..="cd ../";
-alias ..l="cd ../ && ll";
+alias ..l="cd ../ && ls";
 alias cz="code ~/.zshrc";
 alias sz="source ~/.zshrc";
 alias npm-update="npx npm-check-updates --dep prod,dev --upgrade";
