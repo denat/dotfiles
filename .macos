@@ -50,7 +50,7 @@ npm install --global yarn serve fkill-cli
 echo "installing apps with brew --cask"
 brew install --cask firefox 1password \
 visual-studio-code discord vlc zoom \
-spotify slack docker iterm2
+spotify slack docker iterm2 notion
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "denat3@gmail.com" -f ~/.ssh/id_ed25519
