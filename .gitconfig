@@ -13,6 +13,7 @@
   cdiff = "!git diff $1 $1^"
 [push]
   default = current
+  autoSetupRemote = true
 [core]
 	excludesfile = /Users/denathoxha/.gitignore_global
 [init]
