@@ -1,7 +1,6 @@
 [user]
   name = Denat Hoxha
   email = denat3@gmail.com
-
 [pull]
   rebase = true
 [alias]
@@ -15,6 +14,6 @@
   default = current
   autoSetupRemote = true
 [core]
-	excludesfile = /Users/denathoxha/.gitignore_global
+  excludesfile = /Users/denathoxha/.gitignore_global
 [init]
-	defaultBranch = main
+  defaultBranch = main
