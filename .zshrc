@@ -78,6 +78,7 @@ alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 ## git aliases
 function gc { git commit -m "$@"; }
+alias go="git checkout";
 alias gs="git status";
 alias gp="git pull";
 alias gf="git fetch";
