@@ -10,6 +10,7 @@
   amend = commit -a --amend --no-edit
   unstage = reset --soft HEAD
   cdiff = "!git diff $1 $1^"
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 [push]
   default = current
   autoSetupRemote = true
