@@ -63,6 +63,9 @@ ln -s "${HOME}/dotfiles/.gitconfig" "${HOME}/.gitconfig"
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+# Invert scroll direction
+defaults write -g com.apple.swipescrolldirection -bool FALSE
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
