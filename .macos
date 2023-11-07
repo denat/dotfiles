@@ -32,25 +32,14 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/denathoxha/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "brew installing stuff"
-# hub: a github-specific version of git
-# tree: really handy for listing out directories in text
-# bat: A cat(1) clone with syntax highlighting and Git integration.
-# asdf: ecosystem of existing runtimes & tools
-brew install git hub tree bat asdf
 
-echo "installing node (via n-install)"
-curl -L https://git.io/n-install | bash
+brew bundle --file Brewfile.macos -v
 
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
 echo "installing yarn and a few global npm packages"
 npm install --global yarn serve fkill-cli
-
-echo "installing apps with brew --cask"
-brew install --cask firefox 1password \
-visual-studio-code discord vlc zoom \
-spotify slack docker iterm2 notion
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "denat3@gmail.com" -f ~/.ssh/id_ed25519
