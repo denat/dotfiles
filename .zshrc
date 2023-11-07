@@ -1,38 +1,6 @@
-#!/bin/bash
-
 export TERM=xterm-256color
 export CLICOLOR=1
 export LSCOLORS=Fafacxdxbxegedabagacad
-
-# PROMPT STUFF
-GREEN=$(tput setaf 2);
-YELLOW=$(tput setaf 3);
-RESET=$(tput sgr0);
-
-function git_branch {
-  # Shows the current branch if in a git repository
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \(\1\)/';
-}
-
-function random_element {
-  declare -a array=("$@")
-  r=$((RANDOM % ${#array[@]}))
-  printf "%s\n" "${array[$r]}"
-}
-
-# Default Prompt
-setEmoji () {
-  EMOJI="$*"
-  DISPLAY_DIR='$(dirs)'
-  DISPLAY_BRANCH='$(git_branch)'
-  PROMPT="${YELLOW}${DISPLAY_DIR}${GREEN}${DISPLAY_BRANCH}${RESET} ${EMOJI}"$'\n'"$ ";
-}
-
-newRandomEmoji () {
-  setEmoji "$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
-}
-
-newRandomEmoji
 
 # allow substitution in PS1
 setopt promptsubst
@@ -65,35 +33,14 @@ PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *"$N_PREFIX/bin"* ]] || PATH="$N_PREFIX/bin:$PATH"  # Added by n-install (see http://git.io/n-install-repo).
 
 # Custom Aliases
-alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
-function c { code ${@:-.} }
-alias ll="ls -1a";
-alias ..="cd ../";
-alias ..l="cd ../ && ls";
-alias cz="code ~/.zshrc";
-alias sz="source ~/.zshrc";
 alias npm-update="npx npm-check-updates --dep prod,dev --upgrade";
 alias yarn-update="yarn upgrade-interactive --latest";
-alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 ## git aliases
-function gc { git commit -m "$@"; }
 alias go="git checkout";
-alias gs="git status";
-alias gp="git pull";
 alias gf="git fetch";
-alias gpush="git push";
-alias gd="git diff";
-alias ga="git add .";
-alias gamend="git commit --amend --no-edit"
 dif() { git diff --color --no-index "$1" "$2" | diff-so-fancy; }
 cdiff() { code --diff "$1" "$2"; }
-
-## yarn aliases
-alias yar="yarn run";
-alias yas="yarn run start";
-alias yab="yarn run build";
-alias yat="yarn run test";
 
 # Custom functions
 mg () { mkdir "$@" && cd "$@" || exit; }
@@ -116,4 +63,4 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Uncomment below for private zshrc configuration that you don't want exposed in the git repo
-# source ~/.zshrc.private
+# source ~/.zshrc.private%
